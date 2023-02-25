@@ -35,7 +35,7 @@ def calcValence(valence, rgb):
     randomColor = r.randint(0,1)
 
     if (valence <= .25):
-        rgb[1] = int(color_value)
+        rgb[2] = int(color_value)
     elif (valence >= .25 and valence <= .5):
         # blue = 0
         # green = 1
@@ -55,6 +55,34 @@ def calcValence(valence, rgb):
         high_valence = True
     
     return high_valence
+
+
+def calcEnergy(energy, rgb):
+    high_energy = False
+    color_value = 255 * energy
+    randomColor = r.randint(0,1)
+
+    if (energy <= .25):
+        rgb[1] = int(color_value)
+    elif (energy >= .25 and energy <= .5):
+        # blue = 0
+        # green = 1
+        if (randomColor == 1):
+            rgb[1] = int(color_value)
+        else: 
+            rgb[2] = int(color_value)
+    elif (energy >= .5 and energy <= .75):
+        # green = 0
+        # red = 1
+        if (randomColor == 1):
+            rgb[0] = int(color_value)
+        else: 
+            rgb[1] = int(color_value)
+    else: 
+        rgb[0] = int(color_value)
+        high_energy = True
+    
+    return high_energy
 
 
 def main():
