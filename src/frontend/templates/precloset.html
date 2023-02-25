@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>This should have an array of pictures from the closet.</h1>
+    <a href = "/closet">
+        closet
+    </a>
+    {% for img in photos %}
+    <div class="gallery">
+        <img src="static/{{img}}" alt="{{img}}" width="600" height="400">
+    </div>
+    {% endfor %}    
 </body>
 </html>
