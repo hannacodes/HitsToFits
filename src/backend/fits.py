@@ -5,6 +5,7 @@ from google.cloud import vision
 from googleapiclient.discovery import build
 import os
 
+# authenticate google
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] ='hit2fitKey.json'
 
 image_uri = 'gs://cloud-samples-data/vision/using_curl/shanghai.jpeg'
