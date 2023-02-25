@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "brickhack-9",
+  "private_key_id": "c36f5efd5ec8702ccf1c61941f970f77873d9ba4",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCzCrtzS0yTBJzH\nC3zKeTF9Kgmg9FAuBSlog+dEuoXtpBOCCjZf10qMojFv5pKPShwaXPNIQq8Gk/OV\nctFMv1EWuLTxV86KqB4Xklin5fMKozEE2EGG0EV7EMs3whqwjUPZ4OvSZYCeBlrW\nZ/Vl5eqXDJg68vfjh/R7vnkXR2sipQTZ5Dwm0jvKettXOJWzwvOMfWPQlNw6EuyU\nVVXIUlCvPFtsSe7M2NwEyJE5xepZ74YaKLmQ7s6gxFrCKkym6NVELSx/tOVZYNzx\n9Eg0W1yTu9FBq5z4iID/RUCOd+EcCc0Z0VZ3W7FxK+Y3uCbfIgSrMpH1S1TIK6hV\n31palcmbAgMBAAECggEAGk/iIHLZJroEzakTMTECZDdArFYl+mgTyneoDeJY5bBj\n6uEpVd3D56Bmd4rWexcUbji+ysh8rxDLOWli96PI0k1ZeiZsr3/pfDlWV3EPI2m8\nPc6yQpJqbkhCNUg3YpRAJnhMRTgENjUPiyGYCjOceDpc8jzcJU9zpJk8ySkGcP65\ncT6QZXEZvbBfbv1Wz2BqnAe86zjRzYZvX0ADi8CHzhJbPMcnJBSwwCdeg7tTiGGU\nxDe+jsTlIpPiMT98jLczG4jdS7bzdjMt4sbPGFY2kkzzZo7+SPdljimk0uerhmsH\n0r5fzZ8EpnezzG5GckMox0OM+DoPs+9F3MczRiYHwQKBgQDu3cfghiEUwfI+F6dD\nP1DeDUonTodlIeVBJ1ZYxK7D0TEZyhydnyIyDRQBT/o5fYWqeIVHVquNbbYBmd5P\nByr/0/cZsXxSEkVmTIlyHU5erNeLKqCvDIOwWuWHNptbFcDYvvJE7JjFauQM/6Wa\ny9hNsgBlL5oDtuhGfHYQk+DvcQKBgQC/4mqsAVUMWAW0de38KE5OypJQZlPtiwhh\neJnpDNDWJBq1dNJBqJaND8iV7S81OBEfFC8uyiC0Dm/ybCw5Z9wIgWHxlT6s1bNJ\nH/Mx1MdhpsssLcRUFBeRCglrXGJ1B15stv35rGPGwWTUzaB16T+/BlXf1pHvv+ca\nJyxvv+cbywKBgQCLR9qyesNzXRupRRWMyrCWqd0hSlL8j2UkNpHMtPLKz4H37bf9\n2LqRwLp3gXEAcMat/hSI4mqpzt0f1d6g6icSgUBGRQ2etXSuD9bdKWV3IwWT6klD\niOKIxJet3hN8axTFzaFquyLhilBrm+2uc0ovE6nTVoxRuid6YjxdsjyooQKBgBjg\n0TXF4nH8Q5kXJSjpTOXYS8oSylTlDswcZ9AYckchXTkjkVMj+YkGf9o4a0N6JnYi\nFs/5Mu5FZOxIbB9xQMz1gW5iDEM6XclgVBak4MjfaD4tHORNypRqebgqvTUxJGPy\nAdHKMRGG53zTwDcpa7NnreCcoEU2W08/vvoqJlurAoGAQjgyJX1FmdQMIpkcSmDG\n8WOGtzlCK2sccd5LFc8UGDqhN6hHLn+tNdm74MiIG2LI1K22XPj3nsYUMKPLLvcO\nwyQMn2FdxPHxkvfRyGoeznutBgkgihQad+BsVYbnaNAxf6HQZyoWcOEp8BArs3Di\n2q7KynQ0lKxvanxCqJHPX2o=\n-----END PRIVATE KEY-----\n",
+  "client_email": "hit2fitapi@brickhack-9.iam.gserviceaccount.com",
+  "client_id": "102771348088879128050",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/hit2fitapi%40brickhack-9.iam.gserviceaccount.com"
+}
