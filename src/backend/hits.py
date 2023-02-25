@@ -5,7 +5,8 @@ import json
 from dotenv import load_dotenv
 from spotipy.oauth2 import SpotifyClientCredentials
 # this class gets the data from the song
-load_dotenv()
+def auth():
+    load_dotenv()
 CID = os.getenv('CLIENTID')
 CIS = os.getenv('CLIENTSECRET')
 
@@ -36,7 +37,11 @@ def getEnergy(features):
 def getValence(features):
     return features["valence"]
 
+def getDanceability(features):
+    return features["danceability"]
+
 if __name__ == '__main__':
+    auth()
     print("enter a song: ")
     track_uri = input()
     features = getAllData(track_uri)
