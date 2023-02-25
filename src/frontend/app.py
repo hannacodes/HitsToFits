@@ -1,18 +1,45 @@
-from flask import Flask
+from flask import Flask, render_template, request
+import sys
+import os
+ 
+# setting path
+path = os.path.join(os.path.dirname(__file__), os.pardir)
+sys.path.append(path)
+sys.path.append('../backend')
+
+from backend import hits
 
 app = Flask(__name__)
 
 nav = "<a href='/'>home</a> <a href='/about/'>about</a>"
 
 @app.route('/')
-def hello():
-    return nav + '<h1>TEST TEST</h1>'
+def input():
+    return render_template('input.html')
 
+@app.route('/song', methods = ['POST', 'GET'])
+def song():
+    print(request.method )
+    if request.method == 'GET': 
+        return f"the url is invalid"
+    if request.method == 'POST':
+        form_data = request.form
+        features = hits.getAllData(form_data["song"])
+        mode = hits.getMode(features)
+        return "<h1> Mode: "+str(mode)+"</h1>"
+    
+@app.route('/closet')
+def closet(): 
+    return render_template("closet.html")
 
-@app.route('/about/')
-def about():
-    return nav+'<h3>This is a Flask web application.</h3>'
-
-@app.route('/test/')
-def test():
-    return nav+'<h3>another page!</h3>'
+@app.route('/upload', methods=["GET", "POST"])
+def upload(): 
+    if request.method == 'POST': 
+        if request.form.get("existing") == "ViewExisting":
+            return "existing"
+        else: 
+            print(request.form)
+            photolst = request.form.getlist("photos")
+            return "you uploaded: " + str(photolst)
+    if request.method == 'GET': 
+        return f"the url is invalid"
