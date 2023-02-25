@@ -1,6 +1,6 @@
 <h1>Upload Closet</h1>
-<form action = "/upload" method = "POST">
-    <input type="file" id="photos" name="photos" multiple>
+<form action = "/upload" method = "POST" enctype="multipart/form-data">
+    <input type="file" id="photos" name="file" multiple>
     <input type="submit">
     <input type="submit" value="ViewExisting" name="existing">
 </form>
