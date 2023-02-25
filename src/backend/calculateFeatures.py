@@ -85,20 +85,34 @@ def calcEnergy(energy, rgb):
     return high_energy
 
 
+def calculateAvg(rgb, dance_rgb, valence_rgb, energy_rgb):
+    for i in range(0, 3):
+        rgb[i] = (dance_rgb[i] + valence_rgb[i] + energy_rgb[i]) // 3
+
+
 def main():
     # rgb[0]= red 
     # rgb[1] = green
     # rgb[2] = blue
     dance_rgb = [0, 0, 0]
     danceability = 0.6
-    calcDanceability(danceability, dance_rgb)
+    high_dance = calcDanceability(danceability, dance_rgb)
     print(dance_rgb)
 
     valence_rgb = [0, 0, 0]
     valence = 0.5
-    calcValence(valence, valence_rgb)
+    high_valence = calcValence(valence, valence_rgb)
     print(valence_rgb)
     # calculate avg among dance_rgb, valence_rgb, and energy_rgb 
+
+    energy_rgb = [0, 0, 0]
+    energy = 0.2
+    high_energy = calcEnergy(energy, energy_rgb)
+    print(energy_rgb)
+
+    avg_rgb = [0, 0, 0]
+    calculateAvg(avg_rgb, dance_rgb, valence_rgb, energy_rgb)
+    print(avg_rgb)
 
 if __name__ == "__main__":
     main()
