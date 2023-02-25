@@ -60,6 +60,8 @@ def upload():
     if request.method == 'GET': 
         return f"the url is invalid"
 
-@app.route("/precloset")
+@app.route("/existing")
 def precloset():
-    return render_template("precloset.html")
+    photos = os.listdir('./static/uploads/exampleCloset/')
+    photos = ['uploads/exampleCloset/' + file for file in photos]
+    return render_template("precloset.html", photos=photos)
