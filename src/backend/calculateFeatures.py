@@ -29,6 +29,34 @@ def calcDanceability(danceability, rgb):
     return high_dance
 
 
+def calcValence(valence, rgb):
+    high_valence = False
+    color_value = 255 * valence
+    randomColor = r.randint(0,1)
+
+    if (valence <= .25):
+        rgb[1] = int(color_value)
+    elif (valence >= .25 and valence <= .5):
+        # blue = 0
+        # green = 1
+        if (randomColor == 1):
+            rgb[1] = int(color_value)
+        else: 
+            rgb[2] = int(color_value)
+    elif (valence >= .5 and valence <= .75):
+        # blue = 0
+        # red = 1
+        if (randomColor == 1):
+            rgb[0] = int(color_value)
+        else: 
+            rgb[2] = int(color_value)
+    else: 
+        rgb[0] = int(color_value)
+        high_valence = True
+    
+    return high_valence
+
+
 def main():
     # rgb[0]= red 
     # rgb[1] = green
@@ -38,6 +66,10 @@ def main():
     calcDanceability(danceability, dance_rgb)
     print(dance_rgb)
 
+    valence_rgb = [0, 0, 0]
+    valence = 0.5
+    calcValence(valence, valence_rgb)
+    print(valence_rgb)
     # calculate avg among dance_rgb, valence_rgb, and energy_rgb 
 
 if __name__ == "__main__":
