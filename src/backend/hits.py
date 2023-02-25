@@ -36,6 +36,9 @@ def getEnergy(features):
 def getValence(features):
     return features["valence"]
 
+def getDanceability(features):
+    return features["danceability"]
+
 if __name__ == '__main__':
     print("enter a song: ")
     track_uri = input()
