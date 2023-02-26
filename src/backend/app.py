@@ -117,6 +117,7 @@ def match():
     photos.append('https://storage.googleapis.com/hit2fit/' + filename)
     name=hits.getName(features)
     artist=hits.getArtist(features)
+    tempo=format(tempo, ".2f")
     return render_template("match.html", photos=photos, danceability=danceability, 
                            energy=energy, valence=valence, tempo=tempo, 
                            name=name, artist=artist)
