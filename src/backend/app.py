@@ -9,7 +9,7 @@ sys.path.append(path)
 sys.path.append('../backend')
 
 from backend import hits, fits, calculateFeatures, closet
-from closet import uploadBlob
+from closet import uploadBlob, listBlobs
 
 app = Flask(__name__)
 
@@ -67,11 +67,12 @@ def upload():
                 fullpath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
                 file.save(fullpath)
                 uploadBlob("hit2fit", fullpath, file.filename)
-            shirts = fits.getShirts('hit2fit')
+            shirts = listBlobs('hit2fit')
             shirts = ['https://storage.googleapis.com/hit2fit/' + shirt for shirt in shirts]
-            pants = fits.getPants('hit2fit')
-            pants = ['https://storage.googleapis.com/hit2fit/' + pant for pant in pants]
-            return render_template("precloset.html", shirts=shirts, pants=pants)
+            
+            # pants = fits.getPants('hit2fit')
+            # pants = ['https://storage.googleapis.com/hit2fit/' + pant for pant in pants]
+            return render_template("precloset.html", shirts=shirts)
 
     if request.method == 'GET':
         return f"the url is invalid"
@@ -79,11 +80,12 @@ def upload():
 
 @app.route("/existing")
 def precloset(): 
-    shirts = fits.getShirts('hit2fit')
+    shirts = listBlobs('hit2fit')
     shirts = ['https://storage.googleapis.com/hit2fit/' + shirt for shirt in shirts]
-    pants = fits.getPants('hit2fit')
-    pants = ['https://storage.googleapis.com/hit2fit/' + pant for pant in pants]
-    return render_template("precloset.html", shirts=shirts, pants=pants)
+    
+    # pants = fits.getPants('hit2fit')
+    # pants = ['https://storage.googleapis.com/hit2fit/' + pant for pant in pants]
+    return render_template("precloset.html", shirts=shirts)
 
 @app.route("/matching")
 def matching(): 
