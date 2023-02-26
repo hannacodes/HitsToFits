@@ -43,6 +43,7 @@ def getBucketColors(bucketName):
     
     return retList
 
+shirtList = []
 # returns true if this is a shirt
 def isShirt(blobName):
     shirt = ["T-shirt", "Shirt", "Active shirt"]
@@ -55,21 +56,9 @@ def isShirt(blobName):
 
     for label in response.label_annotations:
         if label.description in shirt:
-            return True
-        
-    return False
+            shirtList.append(blobName)
 
-# gets the colors of identified shirts in the bucket
-def getShirtColors(bucketName):
-    bucketNames = listBlobs(bucketName)
-
-    shirtColors = []
-    for blobName in bucketNames:
-        if isShirt(blobName):
-            shirtColors.append(getDominantColor(blobName))
-
-    return shirtColors
-
+pantList = []
 # is this a pant
 def isPant(blobName):
     pant = ["Jeans", "Pants", "Active pants"]
@@ -82,20 +71,26 @@ def isPant(blobName):
 
     for label in response.label_annotations:
         if label.description in pant:
-            return True
-        
-    return False
+            pantList.append(blobName)
+
+# gets the colors of identified shirts in the bucket
+def getShirtColors(bucketName):
+    bucketNames = listBlobs(bucketName)
+
+    for blobName in bucketNames:
+        isShirt(blobName)
+
+    return shirtList
+
 
 # gets the colors of identified pants in the bucket
 def getPantColors(bucketName):
     bucketNames = listBlobs(bucketName)
 
-    pantColors = []
     for blobName in bucketNames:
-        if isPant(blobName):
-            pantColors.append(getDominantColor(blobName))
+        isPant(blobName)
 
-    return pantColors
+    return pantList
 
 # testing function
 def getLabels(blobName):
@@ -123,23 +118,14 @@ def getBestMatch(color):
     return None
 
 # return the shirts
-def getShirts(bucket_name):
-    blobs = listBlobs(bucket_name)
-
-    shirtList = []
-    for blob in blobs:
-        if isShirt(blob):
-            shirtList.append(blob)
-
+def getShirts():
     return shirtList
 
 # return the pants
-def getPants(bucket_name):
-    blobs = listBlobs(bucket_name)
-
-    pantList = []
-    for blob in blobs:
-        if isPant(blob):
-            pantList.append(blob)
-
+def getPants():
     return pantList
+
+getShirtColors("hit2fit")
+getPantColors("hit2fit")
+print(shirtList)
+print(pantList)

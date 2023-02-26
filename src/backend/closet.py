@@ -5,7 +5,7 @@ from google.cloud import storage
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] ='bucketKey.json'
 storage_client = storage.Client()
 
-def listBlobs(bucket_name):
+def listBlobsHelper(bucket_name):
     """Lists all the blobs in the bucket."""
     # bucket_name = "your-bucket-name"
     
@@ -19,8 +19,10 @@ def listBlobs(bucket_name):
     
     return blobList
 
-# # accessing a bucket
-# closet = storage.get_bucket('bucket')
+bucketList = listBlobsHelper("hit2fit")
+def listBlobs(bucket_name):
+    return bucketList
+
 
 # upload to bucket
 def uploadBlob(bucket_name, source_file_name, destination_blob_name):
