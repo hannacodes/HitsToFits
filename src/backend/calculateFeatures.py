@@ -2,6 +2,8 @@ import random as r
 import json
 import hits
 
+import fits
+
 # [blue, red, green, yellow, orange, pink, purple, white, black, gray, brown, tan]
 colors = ["#0000FF", "#FF0000", "#00FF00", "#FFFF00", "#ffa500", "#ff69b4", "#a020f0", "#FFFFFF", "#000000", "#7a7a7a", "#8b4513", "#f5deb3"]
 chooseColor = []
@@ -85,7 +87,20 @@ def calcLoudness(loudness, rgb):
         rgb[0] = 255 - rgb[0]
         rgb[1] = 255 - rgb[1]
         rgb[2] = 255 - rgb[2]
-    
+
+def searchCloset(rgb):
+    closet = fits.getBucketColors("hit2fit")
+    bestFitValue = 1000
+    bestFit = []
+    for article in closet:
+        value = abs(rgb[0] - article[0]) + abs(rgb[1] - article[1]) + abs(rgb[2] - article[2])
+        if value < bestFitValue:
+            bestFitValue = value
+            bestFit = article
+        print(value)
+    print(closet)
+    return bestFit
+
 def updateWeights(opinion):
     readfile = open('colorWeights.json', 'r')
     colorWeights = json.load(readfile)
@@ -138,12 +153,16 @@ def main():
     print(rgb)
     calcBrightness(energy, rgb)
     print(rgb)
+    
+    print(searchCloset(rgb))
     bot_rgb = rgb
     calcLoudness(loudness, bot_rgb)
     print(bot_rgb)
 
+    
+
     opinion = "yes"
-    updateWeights(opinion)
+    #updateWeights(opinion)
 
 
 if __name__ == "__main__":
