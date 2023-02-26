@@ -1,5 +1,6 @@
 import random as r
 import json
+import hits
 
 # [blue, red, green, yellow, orange, pink, purple, white, black, gray, brown, tan]
 colors = ["#0000FF", "#FF0000", "#00FF00", "#FFFF00", "#ffa500", "#ff69b4", "#a020f0", "#FFFFFF", "#000000", "#7a7a7a", "#8b4513", "#f5deb3"]
@@ -16,7 +17,7 @@ def hexToRgb(hexColor, rgb):
     rgb[2] = int(hexColor[5:], 16)
 
 def calcColor(danceability, valence, rgb):
-    if (danceability <= .25):
+    if (danceability <= .5):
         if (valence <= .25):
             hexColor = colors[0]    # blue
             hexToRgb(hexColor, rgb)
@@ -69,13 +70,20 @@ def main():
     # rgb[1] = green
     # rgb[2] = blue
     rgb = [0, 0, 0]
-    danceability = .2
-    valence = .5
-    energy = .2
+    features = hits.getAllData("https://open.spotify.com/track/6UBURyvj5cLC4UjhOQWzHa?si=e9b2d3671e6d4f1e")
+    danceability = hits.getDanceability(features)
+    valence = hits.getValence(features)
+    energy = hits.getEnergy(features)
+
+    print(danceability)
+    print(valence)
+    print(energy)
+
     calcColor(danceability, valence, rgb)
     print(rgb)
     calcBrightness(energy, rgb)
     print(rgb)
+
 
 if __name__ == "__main__":
     main()
