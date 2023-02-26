@@ -4,6 +4,7 @@ from google.cloud import storage
 # authenticate google
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] ='bucketKey.json'
 storage_client = storage.Client()
+
 def listBlobs(bucket_name):
     """Lists all the blobs in the bucket."""
     # bucket_name = "your-bucket-name"
