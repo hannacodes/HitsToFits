@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html>
-    <link href="../static/style.css" rel="stylesheet">
+<link href="../static/style.css" rel="stylesheet">
+
 <body>
-    <a href = "/">
-        Try Again! 
-    </a>
-    <h2>Here's your 'fit!</h2>
+    <h1 class="toptext">Here's your 'fit!</h1>
     {% for img in photos %}
     <div class="gallery">
         <img src="{{img}}" alt="{{img}}" width="600" height="400">
     </div>
-    {% endfor %}  
-    <h3>Do you like this fit?</h3>  
-    <form action = "/results" method = "POST" enctype="multipart/form-data">
-        <input type="radio" name="yesno" id="yes" value="yes">Yes</input><br>
-        <input type="radio" name="yesno" id="no" value="no">No</input><br>
-        <input type="submit"> <br>
-        <input type="submit" value="ViewExisting" name="existing">
-    </form>
+    {% endfor %}
+    <h3 class="container">Do you like this fit?</h3>
+    <div class="container">
+
+        <form action="/results" method="POST" enctype="multipart/form-data">
+            <div class="container">
+                <input class="radio" type="radio" name="yesno" id="yes" value="yes">Yes</input><br>
+                <input class="radio" type="radio" name="yesno" id="no" value="no">No</input><br>
+            </div>
+            <input class="final" type="submit"> <br>
+            <input class="final" type="submit" value="ViewExisting" name="existing">
+        </form>
+    </div>
 
 </body>
+
 </html>

@@ -11,13 +11,13 @@
             Next
         </a>
     </div>
-    <div class="toptext">
+    <div class="container">
         <h1>These are the items in your closet:</h1>
     </div>
         {% for img in photos %}
 
         <div class="gallery">
-            <img src="static/{{img}}" alt="{{img}}" width="300" height="auto">
+            <img src="{{img}}" alt="{{img}}" width="300" height="auto">
         </div>
         {% endfor %}
 </body>
