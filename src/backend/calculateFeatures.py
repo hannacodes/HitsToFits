@@ -108,7 +108,7 @@ def updateWeights(opinion):
 
         colorIndex = colors.index(colorWeights.get("currentColor"))
         
-        if opinion.equals("yes"):
+        if opinion == "yes":
             colorWeights.get(dancevalKey)[colorIndex] += 1
         else:
             colorWeights.get(dancevalKey)[colorIndex] -= 1
@@ -141,6 +141,9 @@ def main():
     bot_rgb = rgb
     calcLoudness(loudness, bot_rgb)
     print(bot_rgb)
+
+    opinion = "yes"
+    updateWeights(opinion)
 
 
 if __name__ == "__main__":

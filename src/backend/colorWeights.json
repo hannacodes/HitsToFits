@@ -1,8 +1,7 @@
-{"lowDance_midVal": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-"midDance_lowVal": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-"midDance_midVal": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-"midDance_highVal": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-"highDance_midVal": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-"currentDanceAndVal": 0,
-"currentColor": ""
-}
+{"lowDance_midVal": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 
+"midDance_lowVal": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 
+"midDance_midVal": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 
+"midDance_highVal": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 
+"highDance_midVal": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 
+"currentDanceAndVal": 1, 
+"currentColor": "#8b4513"}
