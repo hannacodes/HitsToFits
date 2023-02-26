@@ -11,11 +11,6 @@ In the target file, use hits.getAllData(<spotify link>)
 Save this array, ex: features = hits.getAllData(<url>)
 To get attributes, use the specific functions, and pass in the features array.
 
-## Contributers:
-Ryan Ong
-Hanna Koh
-Tiger Young
-Lucy Hu
 
 [comment]: <> (readme template taken from https://github.com/othneildrew/Best-README-Template/blob/master/README.md)
 
@@ -45,14 +40,14 @@ Lucy Hu
   <p align="center">
     An outfit suggester based off of song entries!
     <br />
-    <a href="https://github.com/hannacode/HitsToFits"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/hannacodes/HitsToFits"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/hannacode/HitsToFits">View Demo</a>
+    <a href="https://github.com/hannacodes/HitsToFits">View Demo</a>
     ·
-    <a href="https://github.com/hannacode/HitsToFits/issues">Report Bug</a>
+    <a href="https://github.com/hannacodes/HitsToFits/issues">Report Bug</a>
     ·
-    <a href="https://github.com/hannacode/HitsToFits/issues">Request Feature</a>
+    <a href="https://github.com/hannacodes/HitsToFits/issues">Request Feature</a>
   </p>
 </div>
 
@@ -145,16 +140,16 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/hannacode/HitsToFits.svg?style=for-the-badge
-[contributors-url]: https://github.com/hannacode/HitsToFits/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/hannacode/HitsToFits.svg?style=for-the-badge
-[forks-url]: https://github.com/hannacode/HitsToFits/network/members
-[stars-shield]: https://img.shields.io/github/stars/hannacode/HitsToFits.svg?style=for-the-badge
-[stars-url]: https://github.com/hannacode/HitsToFits/stargazers
-[issues-shield]: https://img.shields.io/github/issues/hannacode/HitsToFits.svg?style=for-the-badge
-[issues-url]: https://github.com/hannacode/HitsToFits/issues
-[license-shield]: https://img.shields.io/github/license/hannacode/HitsToFits.svg?style=for-the-badge
-[license-url]:https://github.com/hannacode/HitsToFits/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/hannacodes/HitsToFits.svg?style=for-the-badge
+[contributors-url]: https://github.com/hannacodes/HitsToFits/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/hannacodes/HitsToFits.svg?style=for-the-badge
+[forks-url]: https://github.com/hannacodes/HitsToFits/network/members
+[stars-shield]: https://img.shields.io/github/stars/hannacodes/HitsToFits.svg?style=for-the-badge
+[stars-url]: https://github.com/hannacodes/HitsToFits/stargazers
+[issues-shield]: https://img.shields.io/github/issues/hannacodes/HitsToFits.svg?style=for-the-badge
+[issues-url]: https://github.com/hannacodes/HitsToFits/issues
+[license-shield]: https://img.shields.io/github/license/hannacodes/HitsToFits.svg?style=for-the-badge
+[license-url]:https://github.com/hannacodes/HitsToFits/blob/master/LICENSE.txt
 
 [product-screenshot]: images/screenshot.png
 
