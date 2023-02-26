@@ -145,16 +145,16 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/tusmm/Love-FirstBite.svg?style=for-the-badge
-[contributors-url]: https://github.com/tusmm/Love-FirstBite/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/tusmm/Love-FirstBite.svg?style=for-the-badge
-[forks-url]: https://github.com/tusmm/Love-FirstBite/network/members
-[stars-shield]: https://img.shields.io/github/stars/tusmm/Love-FirstBite.svg?style=for-the-badge
-[stars-url]: https://github.com/tusmm/Love-FirstBite/stargazers
-[issues-shield]: https://img.shields.io/github/issues/tusmm/Love-FirstBite.svg?style=for-the-badge
-[issues-url]: https://github.com/tusmm/Love-FirstBite/issues
-[license-shield]: https://img.shields.io/github/license/tusmm/Love-FirstBite.svg?style=for-the-badge
-[license-url]: https://github.com/tusmm/Love-FirstBite/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/hannacode/HitsToFits.svg?style=for-the-badge
+[contributors-url]: https://github.com/hannacode/HitsToFits/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/hannacode/HitsToFits.svg?style=for-the-badge
+[forks-url]: https://github.com/hannacode/HitsToFits/network/members
+[stars-shield]: https://img.shields.io/github/stars/hannacode/HitsToFits.svg?style=for-the-badge
+[stars-url]: https://github.com/hannacode/HitsToFits/stargazers
+[issues-shield]: https://img.shields.io/github/issues/hannacode/HitsToFits.svg?style=for-the-badge
+[issues-url]: https://github.com/hannacode/HitsToFits/issues
+[license-shield]: https://img.shields.io/github/license/hannacode/HitsToFits.svg?style=for-the-badge
+[license-url]:https://github.com/hannacode/HitsToFits/blob/master/LICENSE.txt
 
 [product-screenshot]: images/screenshot.png
 
