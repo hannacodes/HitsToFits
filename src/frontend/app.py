@@ -8,7 +8,7 @@ path = os.path.join(os.path.dirname(__file__), os.pardir)
 sys.path.append(path)
 sys.path.append('../backend')
 
-from backend import hits
+from backend import hits, fits
 
 app = Flask(__name__)
 
@@ -18,7 +18,7 @@ song_url = ""
 ALLOWED_EXTENSIONS=[".png", ".jpg"]
 UPLOAD_FOLDER = './static/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
+ 
 
 @app.route('/')
 def input():

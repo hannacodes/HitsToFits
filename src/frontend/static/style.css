@@ -1,0 +1,67 @@
+/*
+CSS HEX 
+--midnight-green: #073b3aff;
+--dartmouth-green: #0b6e4fff;
+--jade: #37ae69ff;
+--celadon: #bbeeb6ff;
+--tea-green: #d0f2c2ff;
+*/
+
+
+@font-face{
+    font-family: "Playfair-Display";
+    src: url("fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf");
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Playfair-Display";
+    src: url("fonts/Playfair_Display/PlayfairDisplay-Italic-VariableFont_wght.ttf");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Gotham";
+    src: url("fonts/Gotham-Font/GothamBook.ttf");
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gotham";
+    src: url("fonts/Gotham-Font/Gotham-BookItalic.otf");
+    font-style: italic;
+}
+
+*{
+    font-family: 'Gotham', 'Playfair-Display', sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+body{
+    display: block;
+    margin-left: 2%;
+    background-color: #d0f2c2ff;
+    min-width: 320px;
+}
+
+h1{
+    font-family: 'Playfair-Display';
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toptext{
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

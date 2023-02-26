@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "brickhack-9",
+  "private_key_id": "4eeaafaf6ab308060bb172b13e09a2e38aae68ec",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCRGCdxONPwQpjG\nHZjKbN9EkO4yHAU+xo+uV3Dc1mMV+uklNKGb5R/kQ2aGakJUkmnJslwaXj7EnSZI\nYQopElHeTw/dkEsHN4RuOWQVsrTuSTFz21FOX/CDRJhX/Tn/xuyhhLjYxykMkJhN\nFiL3a0XNcESUE/BB+/tkHj+ihQMau1MSvSaMg2gEU5srdrSu2lDdIyroIQpV+hSP\nagAdF4h6Bj4MZcXAxdn5X/LxqVReT7OGGsH5Px/rjhjpFkuWnfanOOqbWf9Ba40J\nlUVgLHfYCVWNSNfVKETSKC4giQ4YvgIpUXiF2EuSF6d/23JpVFV69PMp1Qpes6/k\nsIVDO22FAgMBAAECggEAC8Fi+rGhvDrNEWoW9bmV6kJ6xf0OsLwaKoQjnQTSoNaE\nGrNVr6GD8LTEQvordxoor4J/o1RE7h2UWzNfhR3am7IYpTkaVxKYrGyCbx6cOZ0d\nAFfB0eGEhUIivKhD0XUOuXRdHJUgPogdistTGGwsyt0AdWXbJqFxh/ZKbhKsQndR\nIxgLW8HVLcku0U5WcRCclPfplM+oO/wqwaZZkqateXZNTeufnSZpTfMqPHoahK0s\nKaJs2TVTXPdn+/2aLOYidnXhuQIzqhPhglz+8tXhP3MdRwoe4BAle9EHsLrItQx4\nwbjCCwe6YysMlWxqCVTlhjCowGg1JzXod98QJCLByQKBgQDD3vhl41ANUPwSfTtW\nMUq6jC0UHPT4ENClgNIkyUwhpTdGMuoSualgcwpo43NXVmDT8wE95rFe07a4FCuy\nkNnrRQ7Acaikwat6bpkwJ+WJrX5QyqPPKD+D2Y47kdAnHoxRb//bpsvgsEjFpco4\nHHWmNgXGIOHFRYhHuuGdN3oeSQKBgQC9osVMGmJH51vLuLkMiGHWe/GREEY2eK6y\nC8eW0Prlzli8j4opYMMvofY2e6/Jhpqj/g5wk2tQhn1awwZuz9MLocodfPLUq3o7\nT0cWa9ZZOEEYyRYGjqeE4x8pA4tIl85z7gb0NSf/2pExgFe3pIlnB5knguhSlwPd\nCvAvWw8FXQKBgDWr1Vjl7ruXY1sVobq+iwGPA5MtVBrdUK7pG6wk1I2rnffIX8d9\nxGG/ZCzVlndqHeI2BjMWEagwTzMlo8usUWpcY+xruJBc2UYVJDjD1evh9Gji/fv3\nxV+1r3m3PNhbUIvIKs3faKJK68Xs5fp2Ie7HgtGFlRffM7akCMpxty6xAoGAOIjY\nLPIIrssIkNmHQXc/Q8Q7pjWl2QNtgWMFo661veEgj0ZzuBZC2mZ8ko2ZQIlCfPV2\ntJUefyk5Id/WgR6wGl2nddcURdbBYAEofkSz6HFe5ta8HERXKMTVO1L1KTUotWMW\n66MVQ6+TbaCHhhYlaHPZcvAR9t1Sp4llRZjuB3kCgYAbgcXvbRYOIfOpA7aIEERU\nCIVgA64AeqDXRA9lAlmhk0cTNc8klHyLuEYWtz//Pmoi9sqe3oUXYAqSBPvwF81D\nYbDseQva+EG4GhrJdvXDutx0NJNSKW83w60KvcR1aJ3DXgDaShe6zZrw+7m0JWJA\nbyaj/kmh5nNTs4ago5GzSA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "bucket@brickhack-9.iam.gserviceaccount.com",
+  "client_id": "115592194747334596335",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bucket%40brickhack-9.iam.gserviceaccount.com"
+}
