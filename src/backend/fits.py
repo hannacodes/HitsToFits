@@ -112,12 +112,12 @@ def getLabels(blobName):
     for label in response.label_annotations:
         print(label.description, '(%.2f%%)' % (label.score*100.))
 
-
+# gets the filename of a certain color
 def getBestMatch(color):
     bucketNames = listBlobs("hit2fit")
 
     for blobName in bucketNames:
         if getDominantColor(blobName) == color:
-            return blobName
+            return str(blobName)
 
     return None
