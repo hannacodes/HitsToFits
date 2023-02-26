@@ -129,3 +129,5 @@ getShirtColors("hit2fit")
 getPantColors("hit2fit")
 print(shirtList)
 print(pantList)
+
+print(getLabels("pants.png"))
