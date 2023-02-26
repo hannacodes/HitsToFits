@@ -93,9 +93,9 @@ To get attributes, use the specific functions, and pass in the features array.
 
 ### Built With
 
-* [![React][React.js]][React-url]
-* [![ReactNative][ReactNative.js]][ReactNative-url]
-* [![Firebase][Firebase.com]][Firebase-url]
+* [![Spotify API][SpotifyAPI.com]][SpotifyAPI-url]
+* [![Flask][Flask.com]][Flask-url]
+* [![Google Cloud][GoogleCloud.com]][GoogleCloud-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -114,8 +114,6 @@ This is an example of how to list things you need to use the software and how to
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-
-sowoow
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
@@ -144,11 +142,11 @@ Tiger Young
 
 [product-screenshot]: images/screenshot.png
 
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
+[SpotifyAPI.com]: https://img.shields.io/badge/SpotifyAPI-0d1517?style=for-the-badge&logo=spotify&logoColor=1DB954
+[SpotifyAPI-url]: https://developer.spotify.com/documentation/web-api/
 
-[ReactNative.js]: https://img.shields.io/badge/ReactNative-10746D?style=for-the-badge&logo=react&logoColor=61DAFB
-[ReactNative-url]: https://reactnative.dev/
+[Flask.com]: https://img.shields.io/badge/Flask-2a3133?style=for-the-badge&logo=flask&logoColor=FFFFFF
+[Flask-url]: https://flask.palletsprojects.com/en/2.2.x/
 
-[Firebase.com]:  https://img.shields.io/badge/Firebase-6F653D?style=for-the-badge&logo=firebase&logoColor=FFCA28
-[Firebase-url]: https://firebase.google.com/
+[GoogleCloud.com]:  https://img.shields.io/badge/GoogleCloud-064f61?style=for-the-badge&logo=googlecloud&logoColor=4C8BF5
+[GoogleCloud-url]: https://cloud.google.com/
