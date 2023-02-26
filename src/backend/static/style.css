@@ -54,7 +54,7 @@ h1{
 }
 
 .container{
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
