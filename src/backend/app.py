@@ -3,13 +3,13 @@ from werkzeug.utils import secure_filename
 import sys
 import os
  
-'''
+
 # setting path
 path = os.path.join(os.path.dirname(__file__), os.pardir)
 sys.path.append(path)
 sys.path.append('../backend')
-''' 
-import hits, fits, calculateFeatures
+
+from backend import hits, fits, calculateFeatures
 
 app = Flask(__name__)
 
@@ -86,5 +86,5 @@ def results():
     value = request.form.get("yesno")
     # pass value into your method, refer to calculateFeatures
      
-     
+
     return redirect("/")
