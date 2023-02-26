@@ -8,16 +8,14 @@ import fits
 colors = ["#0000FF", "#FF0000", "#00FF00", "#FFFF00", "#ffa500", "#ff69b4", "#a020f0", "#FFFFFF", "#000000", "#7a7a7a", "#8b4513", "#f5deb3"]
 chooseColor = []
 
-readfile = open('colorWeights.json', 'r')
-colorWeights = json.load(readfile)
-readfile.close()
+
 
 def hexToRgb(hexColor, rgb):
     rgb[0] = int(hexColor[1:3], 16)
     rgb[1] = int(hexColor[3:5], 16)
     rgb[2] = int(hexColor[5:], 16)
 
-def initialUpdate(dance_val, color):
+def initialUpdate(dance_val, color, colorWeights):
     writefile = open('colorWeights.json', 'w')
     colorWeights["currentDanceAndVal"] = dance_val
     colorWeights["currentColor"] = color
@@ -25,50 +23,53 @@ def initialUpdate(dance_val, color):
     writefile.close()
 
 def calcColor(danceability, valence, rgb):
+    readfile = open('colorWeights.json', 'r')
+    colorWeights = json.load(readfile)
+    readfile.close()
     if (danceability <= .5):
         if (valence <= .25):
             hexColor = colors[0]    # blue
             hexToRgb(hexColor, rgb)
-            initialUpdate(0, hexColor)
+            initialUpdate(0, hexColor, colorWeights)
         elif (valence <= .75):
             chooseColor = r.choices(colors, weights= colorWeights.get("lowDance_midVal"))
             hexColor = chooseColor[0]
             hexToRgb(hexColor, rgb)
-            initialUpdate(1, hexColor)
+            initialUpdate(1, hexColor, colorWeights)
         else:
             hexColor = colors[2]    # green
             hexToRgb(hexColor, rgb)
-            initialUpdate(2, hexColor)
+            initialUpdate(2, hexColor, colorWeights)
     elif (danceability <= .75):
         if (valence <= .25):
             chooseColor = r.choices(colors, weights= colorWeights.get("midDance_lowVal"))
             hexColor = chooseColor[0]
             hexToRgb(hexColor, rgb)
-            initialUpdate(3, hexColor)
+            initialUpdate(3, hexColor, colorWeights)
         elif (valence <= .75):
             chooseColor = r.choices(colors, weights= colorWeights.get("midDance_midVal"))
             hexColor = chooseColor[0]
             hexToRgb(hexColor, rgb)
-            initialUpdate(4, hexColor)
+            initialUpdate(4, hexColor, colorWeights)
         else:
             chooseColor = r.choices(colors, weights= colorWeights.get("midDance_highVal"))
             hexColor = chooseColor[0]
             hexToRgb(hexColor, rgb)
-            initialUpdate(5, hexColor)
+            initialUpdate(5, hexColor, colorWeights)
     else:
         if (valence <= .25):
             hexColor = colors[1]  # red
             hexToRgb(hexColor, rgb)
-            initialUpdate(6, hexColor)
+            initialUpdate(6, hexColor, colorWeights)
         elif (valence <= .75):
             chooseColor = r.choices(colors, weights= colorWeights.get("highDance_midVal"))
             hexColor = chooseColor[0]
             hexToRgb(hexColor, rgb)
-            initialUpdate(7, hexColor)
+            initialUpdate(7, hexColor, colorWeights)
         else:
             hexColor = colors[3]    # yellow
             hexToRgb(hexColor, rgb)
-            initialUpdate(8, hexColor)
+            initialUpdate(8, hexColor, colorWeights)
     
 
 def calcBrightness(energy, rgb):
@@ -97,8 +98,6 @@ def searchCloset(rgb):
         if value < bestFitValue:
             bestFitValue = value
             bestFit = article
-        print(value)
-    print(closet)
     return bestFit
 
 def updateWeights(opinion):
