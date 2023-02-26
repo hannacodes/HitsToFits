@@ -45,7 +45,7 @@ def getBucketColors(bucketName):
 
 # returns true if this is a shirt
 def isShirt(blobName):
-    shirt = ["T-shirt", "Shirt", "Active shirt", "Blouse", "Polo", "Sweatshirt", "Jacket", "Long Sleeve", "Hood"]
+    shirt = ["T-shirt", "Shirt", "Active shirt", "Blouse", "Polo", "Sweatshirt", "Jacket", "Long Sleeve", "Hood", "Jersey", "Neck"]
     uri = 'gs://hit2fit/' + blobName
 
     client = vision.ImageAnnotatorClient()
