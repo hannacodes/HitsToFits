@@ -1,17 +1,5 @@
 # HitsToFits
 
-
-## Using the spotify.py module: 
-Create a .env file with your SpotifyAPI Client ID & Client Secret. 
-
-### In your file:
-Import hits
-Create a input field to get a link to a spotify song, or hard code it. 
-In the target file, use hits.getAllData(<spotify link>)
-Save this array, ex: features = hits.getAllData(<url>)
-To get attributes, use the specific functions, and pass in the features array.
-
-
 [comment]: <> (readme template taken from https://github.com/othneildrew/Best-README-Template/blob/master/README.md)
 
 <!-- PROJECT SHIELDS -->
@@ -103,8 +91,15 @@ To get attributes, use the specific functions, and pass in the features array.
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+## Using the spotify.py module: 
+Create a .env file with your SpotifyAPI Client ID & Client Secret. 
+
+### In your file:
+Import hits
+Create a input field to get a link to a spotify song, or hard code it. 
+In the target file, use hits.getAllData(<spotify link>)
+Save this array, ex: features = hits.getAllData(<url>)
+To get attributes, use the specific functions, and pass in the features array.
 
 ### Prerequisites
 
