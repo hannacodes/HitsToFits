@@ -83,8 +83,8 @@ def calcBrightness(energy, rgb):
         rgb[2] = int(blue)
 
 
-def calcLoudness(loudness, rgb):
-    if (loudness > .3):
+def calcTempo(tempo, rgb):
+    if (tempo > .5):
         rgb[0] = 255 - rgb[0]
         rgb[1] = 255 - rgb[1]
         rgb[2] = 255 - rgb[2]
@@ -152,7 +152,7 @@ def main():
     danceability = hits.getDanceability(features)
     valence = hits.getValence(features)
     energy = hits.getEnergy(features)
-    loudness = hits.getLoudness(features)
+    #loudness = hits.getLoudness(features)
 
     #print(danceability)
     #print(valence)
@@ -166,7 +166,7 @@ def main():
     
     print(searchClosetForTops(rgb))
     bot_rgb = rgb
-    calcLoudness(loudness, bot_rgb)
+    #calcLoudness(loudness, bot_rgb)
     #print(bot_rgb)
     print(searchClosetForBottoms(bot_rgb))
 

@@ -103,13 +103,12 @@ def match():
     danceability = hits.getDanceability(features)
     valence = hits.getValence(features)
     energy = hits.getEnergy(features)
-    loudness = hits.getLoudness(features)
     tempo = hits.getTempo(features)
     calculateFeatures.calcColor(danceability, valence, rgb)
     calculateFeatures.calcBrightness(energy, rgb)
     top = calculateFeatures.searchClosetForTops(rgb)
     bot_rgb = rgb
-    calculateFeatures.calcLoudness(loudness, bot_rgb)
+    calculateFeatures.calcTempo(tempo, bot_rgb)
     bottom = calculateFeatures.searchClosetForBottoms(bot_rgb)
     photos = []
     filename = fits.getBestMatch(top)
