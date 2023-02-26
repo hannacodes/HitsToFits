@@ -19,3 +19,4 @@ def uploadToBucket(blobName, filePath, bucketName):
     except Exception as e:
         print(e)
         return False
+    
