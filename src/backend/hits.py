@@ -48,7 +48,7 @@ def getArtist(features):
     return track["artists"][0]["name"]
 
 def getTempo(features): 
-    tempo = sp.track(features["tempo"])
+    tempo = features["tempo"]
     return tempo/200
 
 if __name__ == '__main__':
