@@ -32,7 +32,6 @@ def uploadBlob(bucket_name, source_file_name, destination_blob_name):
     # The ID of your GCS object
     # destination_blob_name = "storage-object-name"
 
-    storage_client = storage.Client()
     bucket = storage_client.bucket(bucket_name)
     blob = bucket.blob(destination_blob_name)
 
@@ -55,8 +54,6 @@ def deleteBlob(bucket_name, blob_name):
     # bucket_name = "your-bucket-name"
     # blob_name = "your-object-name"
 
-    storage_client = storage.Client()
-
     bucket = storage_client.bucket(bucket_name)
     blob = bucket.blob(blob_name)
     generation_match_precondition = None
@@ -70,3 +67,5 @@ def deleteBlob(bucket_name, blob_name):
     blob.delete(if_generation_match=generation_match_precondition)
 
     print(f"Blob {blob_name} deleted.")
+
+
