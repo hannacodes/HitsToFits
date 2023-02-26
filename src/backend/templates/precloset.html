@@ -3,6 +3,7 @@
 <title>HitsToFits</title>
 <link href="../static/style.css" rel="stylesheet">
 <link rel="icon" href="static/hits2fitsblack.png" sizes="16x16" type="image/png">
+
 <body>
     <div class="navbar">
         <a class="nav" href="/closet">
@@ -15,12 +16,24 @@
     <div class="container">
         <h1>These are the items in your closet:</h1>
     </div>
-        {% for img in photos %}
+    <div class="container">
+        <h3>Shirts</h3>
+    </div>
+    {% for img in shirts %}
 
-        <div class="gallery">
-            <img src="{{img}}" alt="{{img}}" width="300" height="auto">
-        </div>
-        {% endfor %}
+    <div class="gallery">
+        <img src="{{img}}" alt="{{img}}" width="300" height="auto">
+    </div>
+    {% endfor %}
+    <div class="container">
+        <h3>Pants</h3>
+    </div>
+    {% for img in pants %}
+
+    <div class="gallery">
+        <img src="{{img}}" alt="{{img}}" width="300" height="auto">
+    </div>
+    {% endfor %}
 </body>
 
 </html>

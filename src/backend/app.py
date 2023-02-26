@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, redirect, g, session
 from werkzeug.utils import secure_filename
-import requests
 import sys
 import os
 
@@ -10,7 +9,7 @@ sys.path.append(path)
 sys.path.append('../backend')
 
 from backend import hits, fits, calculateFeatures, closet
-from closet import uploadBlob, listBlobs
+from closet import uploadBlob
 
 app = Flask(__name__)
 
@@ -68,14 +67,11 @@ def upload():
                 fullpath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
                 file.save(fullpath)
                 uploadBlob("hit2fit", fullpath, file.filename)
-            photos = listBlobs("hit2fit")
-            photos = ['https://storage.googleapis.com/hit2fit/' + file for file in photos]
-
-            # photos = os.listdir('./static/uploads/')
-            # print(photos)
-            # photos.remove("exampleCloset")
-            # photos = ['uploads/' + file for file in photos]
-            return render_template("precloset.html", photos=photos)
+            shirts = fits.getShirts('hit2fit')
+            shirts = ['https://storage.googleapis.com/hit2fit/' + shirt for shirt in shirts]
+            pants = fits.getPants('hit2fit')
+            pants = ['https://storage.googleapis.com/hit2fit/' + pant for pant in pants]
+            return render_template("precloset.html", shirts=shirts, pants=pants)
 
     if request.method == 'GET':
         return f"the url is invalid"
@@ -83,9 +79,11 @@ def upload():
 
 @app.route("/existing")
 def precloset(): 
-    photos = listBlobs("hit2fit")
-    photos = ['https://storage.googleapis.com/hit2fit/' + file for file in photos]
-    return render_template("precloset.html", photos=photos)
+    shirts = fits.getShirts('hit2fit')
+    shirts = ['https://storage.googleapis.com/hit2fit/' + shirt for shirt in shirts]
+    pants = fits.getPants('hit2fit')
+    pants = ['https://storage.googleapis.com/hit2fit/' + pant for pant in pants]
+    return render_template("precloset.html", shirts=shirts, pants=pants)
 
 @app.route("/matching")
 def matching(): 
@@ -116,7 +114,11 @@ def match():
     filename = fits.getBestMatch(bottom)
     photos.append('https://storage.googleapis.com/hit2fit/' + filename)
     loudness=format(loudness, '.3f')
-    return render_template("match.html", photos=photos, danceability=danceability, energy=energy, valence=valence, loudness=loudness)
+    name=hits.getName(features)
+    artist=hits.getArtist(features)
+    return render_template("match.html", photos=photos, danceability=danceability, 
+                           energy=energy, valence=valence, loudness=loudness, 
+                           name=name, artist=artist)
 
 @app.route("/results", methods=["GET", "POST"])
 def results():

@@ -39,6 +39,14 @@ def getValence(features):
 def getDanceability(features):
     return features["danceability"]
 
+def getName(features):
+    track = sp.track(features["id"])
+    return track["name"]
+
+def getArtist(features):
+    track = sp.track(features["id"])
+    return track["artists"][0]["name"]
+
 if __name__ == '__main__':
     print("enter a song: ")
     track_uri = input()
@@ -47,3 +55,5 @@ if __name__ == '__main__':
     print(getLoudness(features))
     print(getEnergy(features))
     print(getValence(features))
+    print(getName(features))
+    print(getArtist(features))
