@@ -89,8 +89,19 @@ def calcLoudness(loudness, rgb):
         rgb[1] = 255 - rgb[1]
         rgb[2] = 255 - rgb[2]
 
-def searchCloset(rgb):
-    closet = fits.getBucketColors("hit2fit")
+def searchClosetForTops(rgb):
+    closet = fits.getShirtColors("hit2fit")
+    bestFitValue = 1000
+    bestFit = []
+    for article in closet:
+        value = abs(rgb[0] - article[0]) + abs(rgb[1] - article[1]) + abs(rgb[2] - article[2])
+        if value < bestFitValue:
+            bestFitValue = value
+            bestFit = article
+    return bestFit
+
+def searchClosetForBottoms(rgb):
+    closet = fits.getPantColors("hit2fit")
     bestFitValue = 1000
     bestFit = []
     for article in closet:
@@ -143,20 +154,21 @@ def main():
     energy = hits.getEnergy(features)
     loudness = hits.getLoudness(features)
 
-    print(danceability)
-    print(valence)
-    print(energy)
-    print(loudness)
+    #print(danceability)
+    #print(valence)
+    #print(energy)
+    #print(loudness)
 
     calcColor(danceability, valence, rgb)
-    print(rgb)
+    #print(rgb)
     calcBrightness(energy, rgb)
-    print(rgb)
+    #print(rgb)
     
-    print(searchCloset(rgb))
+    print(searchClosetForTops(rgb))
     bot_rgb = rgb
     calcLoudness(loudness, bot_rgb)
-    print(bot_rgb)
+    #print(bot_rgb)
+    print(searchClosetForBottoms(bot_rgb))
 
     
 
