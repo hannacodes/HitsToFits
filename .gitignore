@@ -33,6 +33,7 @@ __init__.py
 hit2fitKey.json
 */backend/hit2fitKey.json
 backend/hit2fitKey.json
+backend/bucketKey.json
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
