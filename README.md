@@ -26,12 +26,11 @@ To get attributes, use the specific functions, and pass in the features array.
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Ferobb221.fandom.com%2Fwiki%2FLoltyler1&psig=AOvVaw2J0r9vZ0QdJCRmMbFSTb27&ust=1677476122399000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCID6hNW7sv0CFQAAAAAdAAAAABAD">
+  <a href="">
     <img src="" alt="banner" width="500" height="200">
   </a>
 
@@ -70,7 +69,7 @@ To get attributes, use the specific functions, and pass in the features array.
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#license">License</a></li>
+    
   </ol>
 </details>
 
@@ -83,12 +82,11 @@ To get attributes, use the specific functions, and pass in the features array.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Key Features
-* Login authentication
-* Food recommending system
+* Spotify API to get features about songs
+* User file input to fill closet
+* Remote storage of user data in Google Cloud
+* AI image processing and goal based agents
 * Emoji support in preview :tada:
-* App will keep alive in tray for quick usage
-* Cross platform
-  - Windows, macOS and Linux ready.
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -130,11 +128,6 @@ Hanna Koh
 Ryan Ong  
 Tiger Young  
 
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -148,8 +141,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [stars-url]: https://github.com/hannacodes/HitsToFits/stargazers
 [issues-shield]: https://img.shields.io/github/issues/hannacodes/HitsToFits.svg?style=for-the-badge
 [issues-url]: https://github.com/hannacodes/HitsToFits/issues
-[license-shield]: https://img.shields.io/github/license/hannacodes/HitsToFits.svg?style=for-the-badge
-[license-url]:https://github.com/hannacodes/HitsToFits/blob/master/LICENSE.txt
 
 [product-screenshot]: images/screenshot.png
 
