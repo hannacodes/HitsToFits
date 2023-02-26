@@ -111,6 +111,3 @@ def getLabels(blobName):
     print('=' * 30)
     for label in response.label_annotations:
         print(label.description, '(%.2f%%)' % (label.score*100.))
-
-print(getShirtColors(bucketName))
-print(getPantColors(bucketName))
