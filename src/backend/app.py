@@ -49,7 +49,7 @@ def allowedFile(filename):
 @app.route('/upload', methods=["GET", "POST"])
 def upload(): 
     if request.method == 'POST': 
-        if request.form.get("existing") == "ViewExisting":
+        if request.form.get("existing") == "View Existing":
             return redirect("/existing")
         else: 
             print(request.files)
@@ -57,7 +57,13 @@ def upload():
             for file in photolst: 
                 filename = secure_filename(file.filename)
                 file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return "you uploaded: " + str(photolst)
+
+            photos = os.listdir('./static/uploads/')
+            print(photos)
+            photos.remove("exampleCloset")
+            photos = ['uploads/' + file for file in photos]
+            return render_template("precloset.html", photos=photos)
+        
     if request.method == 'GET': 
         return f"the url is invalid"
 

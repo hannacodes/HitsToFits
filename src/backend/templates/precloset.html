@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html>
-    <link href="../static/style.css" rel="stylesheet">
+<link href="../static/style.css" rel="stylesheet">
+
 <body>
-    <a href = "/closet">
-        closet
-    </a>
-    <a href = "/matching">
-        next
-    </a>
-    {% for img in photos %}
-    <div class="gallery">
-        <img src="static/{{img}}" alt="{{img}}" width="600" height="400">
+    <div class="navbar">
+        <a class="nav" href="/closet">
+            Back
+        </a>
+        <a class="nav" href="/matching">
+            Next
+        </a>
     </div>
-    {% endfor %}    
+    <div class="container">
+        <h1>These are the items in your closet:</h1>
+    </div>
+        {% for img in photos %}
+
+        <div class="gallery">
+            <img src="static/{{img}}" alt="{{img}}" width="300" height="300">
+        </div>
+        {% endfor %}
 </body>
+
 </html>

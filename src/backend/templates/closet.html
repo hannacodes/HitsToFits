@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
-    <link href="../static/style.css" rel="stylesheet">
+<link href="../static/style.css" rel="stylesheet">
+
 <body>
     <div class="container">
-        
+        <h1>Upload items to your closet!</h1>
     </div>
-    <h1>Upload items to your closet!</h1>
-    <form action = "/upload" method = "POST" enctype="multipart/form-data">
-        <input type="file" id="photos" name="file" multiple>
-        <input type="submit"> <br>
-        <input type="submit" value="ViewExisting" name="existing">
+    <div class = "container">
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input class = "upload" id="file" type="file" id="photos" name="file" multiple><br>
+        <input class = "upload" type="submit"> <br>
+        <input class = "upload" type="submit" value="View Existing" name="existing">
     </form>
-
+    </div>
 </body>
+
 </html>
