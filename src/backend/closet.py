@@ -67,5 +67,3 @@ def deleteBlob(bucket_name, blob_name):
     blob.delete(if_generation_match=generation_match_precondition)
 
     print(f"Blob {blob_name} deleted.")
-
-
