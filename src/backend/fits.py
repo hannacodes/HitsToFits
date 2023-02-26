@@ -4,7 +4,7 @@ import google
 from google.cloud import vision
 from googleapiclient.discovery import build
 import os
-from closet import list_blobs
+from closet import listBlobs
 
 # authenticate google
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] ='hit2fitKey.json'
@@ -32,7 +32,7 @@ def getDominantColor(blobName):
     return [int(colorString.red), int(colorString.green), int(colorString.blue)]
 
 def getBucketColors(bucketName):
-    bucketNames = list_blobs(bucketName)
+    bucketNames = listBlobs(bucketName)
     
     retList = []
     for blobName in bucketNames:
