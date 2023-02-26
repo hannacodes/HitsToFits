@@ -19,7 +19,8 @@ song_url = ""
 ALLOWED_EXTENSIONS=[".png", ".jpg"]
 UPLOAD_FOLDER = './static/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
- 
+
+features = {}
 
 @app.route('/')
 def input():
@@ -77,6 +78,13 @@ def precloset():
 def matching(): 
     # gonna have to figure out how to show 
     # loading screen while background stuff going
+    print(song_url)
+    rgb = [0, 0, 0]
+    danceability = hits.getDanceability(features)
+    valence = hits.getValence(features)
+    energy = hits.getEnergy(features)
+    calculateFeatures.calcColor(danceability, valence, rgb)
+    calculateFeatures.calcBrightness(energy, rgb)
     return render_template("spinner.html")
 
 @app.route("/match")
@@ -91,6 +99,6 @@ def results():
     # user value located in value
     value = request.form.get("yesno")
     # pass value into your method, refer to calculateFeatures
-     
+    calculateFeatures.updateWeights(value)
 
     return redirect("/")
