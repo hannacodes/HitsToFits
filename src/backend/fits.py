@@ -111,3 +111,13 @@ def getLabels(blobName):
     print('=' * 30)
     for label in response.label_annotations:
         print(label.description, '(%.2f%%)' % (label.score*100.))
+
+
+def getBestMatch(color):
+    bucketNames = listBlobs("hit2fit")
+
+    for blobName in bucketNames:
+        if getDominantColor(blobName) == color:
+            return blobName
+
+    return None
