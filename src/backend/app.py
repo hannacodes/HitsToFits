@@ -68,7 +68,7 @@ def upload():
                 file.save(fullpath)
                 uploadBlob("hit2fit", fullpath, file.filename)
             shirts = listBlobs('hit2fit')
-            shirts = ['https://storage.googleapis.com/hit2fit/' + shirt for shirt in shirts]
+            shirts = ['https://storage.cloud.google.com/hit2fit/' + shirt for shirt in shirts]
             
             # pants = fits.getPants('hit2fit')
             # pants = ['https://storage.googleapis.com/hit2fit/' + pant for pant in pants]
@@ -81,7 +81,7 @@ def upload():
 @app.route("/existing")
 def precloset(): 
     shirts = listBlobs('hit2fit')
-    shirts = ['https://storage.googleapis.com/hit2fit/' + shirt for shirt in shirts]
+    shirts = ['https://storage.cloud.google.com/hit2fit/' + shirt for shirt in shirts]
     
     # pants = fits.getPants('hit2fit')
     # pants = ['https://storage.googleapis.com/hit2fit/' + pant for pant in pants]
@@ -112,9 +112,9 @@ def match():
     bottom = calculateFeatures.searchClosetForBottoms(bot_rgb)
     photos = []
     filename = fits.getBestMatch(top)
-    photos.append('https://storage.googleapis.com/hit2fit/' + filename)
+    photos.append('https://storage.cloud.google.com/hit2fit/' + filename)
     filename = fits.getBestMatch(bottom)
-    photos.append('https://storage.googleapis.com/hit2fit/' + filename)
+    photos.append('https://storage.cloud.google.com/hit2fit/' + filename)
     name=hits.getName(features)
     artist=hits.getArtist(features)
     tempo=format(tempo, ".2f")
