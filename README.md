@@ -14,3 +14,5 @@ To get attributes, use the specific functions, and pass in the features array.
 ## Contributers:
 Ryan Ong
 Hanna Koh
+Tiger Young
+Lucy Hu
