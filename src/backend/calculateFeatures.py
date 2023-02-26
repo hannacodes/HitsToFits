@@ -54,8 +54,8 @@ def calcColor(danceability, valence, rgb):
     
 
 def calcBrightness(energy, rgb):
-    if (energy < .75):
-        adjustedEnergy = energy + 0.25
+    if (energy < .6):
+        adjustedEnergy = energy + 0.4
         red = rgb[0] * adjustedEnergy
         green = rgb[1] * adjustedEnergy
         blue = rgb[2] * adjustedEnergy
@@ -71,7 +71,7 @@ def main():
     rgb = [0, 0, 0]
     danceability = .2
     valence = .5
-    energy = .4
+    energy = .2
     calcColor(danceability, valence, rgb)
     print(rgb)
     calcBrightness(energy, rgb)
