@@ -4,7 +4,6 @@ import google
 from google.cloud import vision
 from googleapiclient.discovery import build
 import os
-import json
 
 # authenticate google
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] ='hit2fitKey.json'
@@ -40,7 +39,7 @@ def getDominantColor():
             '{}\nFor more info on error messages, check: '
             'https://cloud.google.com/apis/design/errors'.format(
                 response.error.message))
-    return [colorString.red, colorString.green, colorString.blue]
+    return [int(colorString.red), int(colorString.green), int(colorString.blue)]
 
 
 print(getDominantColor())
