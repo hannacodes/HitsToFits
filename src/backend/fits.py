@@ -45,7 +45,7 @@ def getBucketColors(bucketName):
 
 # returns true if this is a shirt
 def isShirt(blobName):
-    shirt = ["T-shirt", "Shirt", "Active shirt"]
+    shirt = ["T-shirt", "Shirt", "Active shirt", "Blouse", "Polo", "Sweatshirt", "Jacket", "Long Sleeve", "Hood"]
     uri = 'gs://hit2fit/' + blobName
 
     client = vision.ImageAnnotatorClient()
@@ -72,7 +72,7 @@ def getShirtColors(bucketName):
 
 # is this a pant
 def isPant(blobName):
-    pant = ["Jeans", "Pants", "Active pants"]
+    pant = ["Jeans", "Pants", "Active pants", "Trousers", "Skirt", "Leggings", "Slacks", "Waist", "Leg"]
     uri = 'gs://hit2fit/' + blobName
 
     client = vision.ImageAnnotatorClient()
@@ -143,3 +143,10 @@ def getPants(bucket_name):
             pantList.append(blob)
 
     return pantList
+
+# testing script
+# for blob in listBlobs("hit2fit"):
+#     print()
+#     print(blob)
+#     getLabels(blob)
+#     print(getDominantColor(blob))
