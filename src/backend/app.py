@@ -104,6 +104,7 @@ def match():
     valence = hits.getValence(features)
     energy = hits.getEnergy(features)
     loudness = hits.getLoudness(features)
+    tempo = hits.getTempo(features)
     calculateFeatures.calcColor(danceability, valence, rgb)
     calculateFeatures.calcBrightness(energy, rgb)
     top = calculateFeatures.searchClosetForTops(rgb)
@@ -115,11 +116,10 @@ def match():
     photos.append('https://storage.googleapis.com/hit2fit/' + filename)
     filename = fits.getBestMatch(bottom)
     photos.append('https://storage.googleapis.com/hit2fit/' + filename)
-    loudness=format(loudness, '.3f')
     name=hits.getName(features)
     artist=hits.getArtist(features)
     return render_template("match.html", photos=photos, danceability=danceability, 
-                           energy=energy, valence=valence, loudness=loudness, 
+                           energy=energy, valence=valence, tempo=tempo, 
                            name=name, artist=artist)
 
 @app.route("/results", methods=["GET", "POST"])

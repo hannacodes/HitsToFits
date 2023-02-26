@@ -47,6 +47,10 @@ def getArtist(features):
     track = sp.track(features["id"])
     return track["artists"][0]["name"]
 
+def getTempo(features): 
+    tempo = sp.track(features["tempo"])
+    return tempo/200
+
 if __name__ == '__main__':
     print("enter a song: ")
     track_uri = input()
