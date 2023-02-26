@@ -65,24 +65,36 @@ def calcBrightness(energy, rgb):
         rgb[2] = int(blue)
 
 
+def calcLoudness(loudness, rgb):
+    if (loudness > .3):
+        rgb[0] = 255 - rgb[0]
+        rgb[1] = 255 - rgb[1]
+        rgb[2] = 255 - rgb[2]
+
+
 def main():
     # rgb[0]= red 
     # rgb[1] = green
     # rgb[2] = blue
     rgb = [0, 0, 0]
-    features = hits.getAllData("https://open.spotify.com/track/6UBURyvj5cLC4UjhOQWzHa?si=e9b2d3671e6d4f1e")
+    features = hits.getAllData("https://open.spotify.com/track/0G21yYKMZoHa30cYVi1iA8?si=94d7d28d8d2d44f2")
     danceability = hits.getDanceability(features)
     valence = hits.getValence(features)
     energy = hits.getEnergy(features)
+    loudness = hits.getLoudness(features)
 
     print(danceability)
     print(valence)
     print(energy)
+    print(loudness)
 
     calcColor(danceability, valence, rgb)
     print(rgb)
     calcBrightness(energy, rgb)
     print(rgb)
+    bot_rgb = rgb
+    calcLoudness(loudness, bot_rgb)
+    print(bot_rgb)
 
 
 if __name__ == "__main__":
