@@ -1,8 +1,7 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, g, session
 from werkzeug.utils import secure_filename
 import sys
 import os
- 
 
 # setting path
 path = os.path.join(os.path.dirname(__file__), os.pardir)
@@ -16,11 +15,12 @@ app = Flask(__name__)
 nav = "<a href='/'>home</a> <a href='/about/'>about</a>"
 
 song_url = ""
+features = {}
 ALLOWED_EXTENSIONS=[".png", ".jpg"]
 UPLOAD_FOLDER = './static/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-features = {}
+    
 
 @app.route('/')
 def input():
@@ -35,6 +35,10 @@ def song():
         form_data = request.form
         song_url = form_data["song"]
         features = hits.getAllData(song_url)
+        f = open("data.txt", "w")
+        f.write(form_data["song"])
+        f.flush()
+        f.close()
         mode = hits.getMode(features)
         return redirect("/closet")
         
@@ -78,13 +82,17 @@ def precloset():
 def matching(): 
     # gonna have to figure out how to show 
     # loading screen while background stuff going
-    print(song_url)
+    f = open("data.txt", "r")
+    song_url = f.readline()
+    f.close()
+    features = hits.getAllData(song_url)
     rgb = [0, 0, 0]
     danceability = hits.getDanceability(features)
     valence = hits.getValence(features)
     energy = hits.getEnergy(features)
     calculateFeatures.calcColor(danceability, valence, rgb)
     calculateFeatures.calcBrightness(energy, rgb)
+    
     return render_template("spinner.html")
 
 @app.route("/match")
