@@ -3,25 +3,33 @@
 <title>HitsToFits</title>
 <link href="../static/style.css" rel="stylesheet">
 <link rel="icon" href="static/hits2fitsblack.png" sizes="16x16" type="image/png">
+
 <body>
-    <h1 class="toptext">Here's your 'fit!</h1>
+    <h1 class="container">Here's your fit!</h1>
     {% for img in photos %}
     <div class="container">
         <img src="{{img}}" alt="{{img}}" width="300" height="auto">
     </div>
     {% endfor %}
+    <div class="container">
+        <p>Danceability: {{danceability}} | </p>
+        <p>&nbsp Valence: {{valence}} | </p>
+        <p>&nbsp Energy: {{energy}} | </p>
+        <p>&nbsp Loudness: {{loudness}}</p>
+    </div>
     <h3 class="container">Do you like this fit?</h3>
     <div class="container">
-
         <form action="/results" method="POST" enctype="multipart/form-data">
             <div class="container">
-                <input class="radio" type="radio" name="yesno" id="yes" value="yes">Yes</input><br>
-                <input class="radio" type="radio" name="yesno" id="no" value="no">No</input><br>
+                <div class="yesno">
+                    <input class="radio" type="radio" name="yesno" id="yes" value="yes">Yes</input><br>
+                    <input class="radio" type="radio" name="yesno" id="no" value="no">No</input><br>
+                </div>
             </div>
             <input class="final" type="submit"> <br>
-            <input class="final" type="submit" value="ViewExisting" name="existing">
         </form>
     </div>
+
 
 </body>
 

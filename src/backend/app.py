@@ -115,7 +115,8 @@ def match():
     photos.append('https://storage.googleapis.com/hit2fit/' + filename)
     filename = fits.getBestMatch(bottom)
     photos.append('https://storage.googleapis.com/hit2fit/' + filename)
-    return render_template("match.html", photos=photos)
+    loudness=format(loudness, '.3f')
+    return render_template("match.html", photos=photos, danceability=danceability, energy=energy, valence=valence, loudness=loudness)
 
 @app.route("/results", methods=["GET", "POST"])
 def results():
