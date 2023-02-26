@@ -91,14 +91,19 @@ def calcTempo(tempo, rgb):
 
 def searchClosetForTops(rgb):
     closet = fits.getShirtColors("hit2fit")
-    bestFitValue = 1000
-    bestFit = []
+    bestFitValues = [1000, 1000]
+    bestFit = [[], []]
     for article in closet:
         value = abs(rgb[0] - article[0]) + abs(rgb[1] - article[1]) + abs(rgb[2] - article[2])
-        if value < bestFitValue:
-            bestFitValue = value
-            bestFit = article
-    return bestFit
+        if value < bestFitValues[0]:
+            bestFitValues[1] = bestFitValues[0]
+            bestFitValues[0] = value
+            bestFit[1] = bestFit[0]
+            bestFit[0] = article
+        elif value < bestFitValues[1]: 
+            bestFitValues[1] = value
+            bestFit[1] = article
+    return r.choice(bestFit)
 
 def searchClosetForBottoms(rgb):
     closet = fits.getPantColors("hit2fit")
