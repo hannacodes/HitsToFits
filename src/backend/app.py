@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, redirect, g, session
 from werkzeug.utils import secure_filename
 import requests
-import xmltodict as XD
 import sys
 import os
 
@@ -103,8 +102,13 @@ def matching():
     danceability = hits.getDanceability(features)
     valence = hits.getValence(features)
     energy = hits.getEnergy(features)
+    loudness = hits.getLoudness(features)
     calculateFeatures.calcColor(danceability, valence, rgb)
     calculateFeatures.calcBrightness(energy, rgb)
+    top = calculateFeatures.searchClosetForTops(rgb)
+    bot_rgb = rgb
+    calculateFeatures.calcLoudness(loudness, bot_rgb)
+    bottom = calculateFeatures.searchClosetForBottoms(bot_rgb)
     
     return render_template("spinner.html")
 
