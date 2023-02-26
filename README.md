@@ -18,8 +18,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href=![Logo](https://github.com/hannacodes/HitsToFits/src/backend/static/hits2fits.png)
-    <img src="" alt="banner" width="500" height="200">
+  <a href="https://github.com/hannacodes/HitsToFits">
+    <img src="src/backend/static/hits2fitsfull.png" alt="banner" width="600" height="200">
   </a>
 
 <h3 align="center">Hits To Fits</h3>
