@@ -2,12 +2,12 @@
 <html>
 <title>HitsToFits</title>
 <link href="../static/style.css" rel="stylesheet">
-<link rel="icon" href="static/hits2fits.png" sizes="16x16" type="image/png">
+<link rel="icon" href="static/hits2fitsblack.png" sizes="16x16" type="image/png">
 <body>
     <h1 class="toptext">Here's your 'fit!</h1>
     {% for img in photos %}
-    <div class="gallery">
-        <img src="{{img}}" alt="{{img}}" width="600" height="400">
+    <div class="container">
+        <img src="{{img}}" alt="{{img}}" width="300" height="auto">
     </div>
     {% endfor %}
     <h3 class="container">Do you like this fit?</h3>

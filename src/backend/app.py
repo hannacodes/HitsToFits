@@ -30,7 +30,6 @@ def input():
 
 @app.route('/song', methods=['POST', 'GET'])
 def song():
-    print(request.method)
     if request.method == 'GET':
         return f"the url is invalid"
     if request.method == 'POST':
@@ -63,7 +62,6 @@ def upload():
         if request.form.get("existing") == "View Existing":
             return redirect("/existing")
         else:
-            print(request.files)
             photolst = request.files.getlist("file")
             for file in photolst:
                 filename = secure_filename(file.filename)
@@ -87,13 +85,16 @@ def upload():
 def precloset(): 
     photos = listBlobs("hit2fit")
     photos = ['https://storage.googleapis.com/hit2fit/' + file for file in photos]
-    print(photos)
     return render_template("precloset.html", photos=photos)
 
 @app.route("/matching")
 def matching(): 
     # gonna have to figure out how to show 
     # loading screen while background stuff going
+    return render_template("spinner.html")
+
+@app.route("/match")
+def match(): 
     f = open("data.txt", "r")
     song_url = f.readline()
     f.close()
@@ -109,12 +110,12 @@ def matching():
     bot_rgb = rgb
     calculateFeatures.calcLoudness(loudness, bot_rgb)
     bottom = calculateFeatures.searchClosetForBottoms(bot_rgb)
-    
-    return render_template("spinner.html")
-
-@app.route("/match")
-def match(): 
-    return render_template("match.html")
+    photos = []
+    filename = fits.getBestMatch(top)
+    photos.append('https://storage.googleapis.com/hit2fit/' + filename)
+    filename = fits.getBestMatch(bottom)
+    photos.append('https://storage.googleapis.com/hit2fit/' + filename)
+    return render_template("match.html", photos=photos)
 
 @app.route("/results", methods=["GET", "POST"])
 def results():
@@ -122,7 +123,7 @@ def results():
     if request.method == 'POST':
         print(request.form)
     # user value located in value
-    value = request.form.get("yesno")
+        value = request.form.get("yesno")
     # pass value into your method, refer to calculateFeatures
     calculateFeatures.updateWeights(value)
 
