@@ -121,3 +121,25 @@ def getBestMatch(color):
             return str(blobName)
 
     return None
+
+# return the shirts
+def getShirts(bucket_name):
+    blobs = listBlobs(bucket_name)
+
+    shirtList = []
+    for blob in blobs:
+        if isShirt(blob):
+            shirtList.append(blob)
+
+    return shirtList
+
+# return the pants
+def getPants(bucket_name):
+    blobs = listBlobs(bucket_name)
+
+    pantList = []
+    for blob in blobs:
+        if isPant(blob):
+            pantList.append(blob)
+
+    return pantList
