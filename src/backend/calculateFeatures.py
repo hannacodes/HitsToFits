@@ -1,118 +1,81 @@
 import random as r
+import json
 
+# [blue, red, green, yellow, orange, pink, purple, white, black, gray, brown, tan]
+colors = ["#0000FF", "#FF0000", "#00FF00", "#FFFF00", "#ffa500", "#ff69b4", "#a020f0", "#FFFFFF", "#000000", "#7a7a7a", "#8b4513", "#f5deb3"]
 
-def calcDanceability(danceability, rgb):
-    high_dance = False
-    color_value = 255 * danceability
-    randomColor = r.randint(0,1)
-    # low danceability = more blue
+readfile = open('colorWeights.json', 'r')
+colorWeights = json.load(readfile)
+readfile.close()
+
+#writefile = open('colorWeights.json', 'w')
+#writefile.close()
+def hexToRgb(hexColor, rgb):
+    rgb[0] = int(hexColor[1:3], 16)
+    rgb[1] = int(hexColor[3:5], 16)
+    rgb[2] = int(hexColor[5:], 16)
+
+def calcColor(danceability, valence, rgb):
     if (danceability <= .25):
-        rgb[2] = int(color_value)
-    elif (danceability >= .25 and danceability <= .5):
-        # blue = 0
-        # green = 1
-        if (randomColor == 1):
-            rgb[1] = int(color_value)
-        else: 
-            rgb[2] = int(color_value)
-    elif (danceability >= .5 and danceability <= .75):
-        # blue = 0
-        # red = 1
-        if (randomColor == 1):
-            rgb[0] = int(color_value)
-        else: 
-            rgb[2] = int(color_value)
-    else: 
-        rgb[0] = int(color_value)
-        high_dance = True
+        if (valence <= .25):
+            hexColor = colors[0]    # blue
+            hexToRgb(hexColor, rgb)
+        elif (valence <= .75):
+            chooseColor = r.choices(colors, weights= colorWeights.get("lowDance_midVal"))
+            hexColor = chooseColor[0]
+            hexToRgb(hexColor, rgb)
+        else:
+            hexColor = colors[2]    # green
+            hexToRgb(hexColor, rgb)
+    elif (danceability <= .75):
+        if (valence <= .25):
+            chooseColor = r.choices(colors, weights= colorWeights.get("midDance_lowVal"))
+            hexColor = chooseColor[0]
+            hexToRgb(hexColor, rgb)
+        elif (valence <= .75):
+            chooseColor = r.choices(colors, weights= colorWeights.get("midDance_midVal"))
+            hexColor = chooseColor[0]
+            hexToRgb(hexColor, rgb)
+        else:
+            chooseColor = r.choices(colors, weights= colorWeights.get("midDance_highVal"))
+            hexColor = chooseColor[0]
+            hexToRgb(hexColor, rgb)
+    else:
+        if (valence <= .25):
+            hexColor = colors[1]  # red
+            hexToRgb(hexColor, rgb)
+        elif (valence <= .75):
+            chooseColor = r.choices(colors, weights= colorWeights.get("highDance_midVal"))
+            hexColor = chooseColor[0]
+            hexToRgb(hexColor, rgb)
+        else:
+            hexColor = colors[3]    # yellow
+            hexToRgb(hexColor, rgb)
     
-    return high_dance
 
-
-def calcValence(valence, rgb):
-    high_valence = False
-    color_value = 255 * valence
-    randomColor = r.randint(0,1)
-
-    if (valence <= .25):
-        rgb[2] = int(color_value)
-    elif (valence >= .25 and valence <= .5):
-        # blue = 0
-        # green = 1
-        if (randomColor == 1):
-            rgb[1] = int(color_value)
-        else: 
-            rgb[2] = int(color_value)
-    elif (valence >= .5 and valence <= .75):
-        # blue = 0
-        # red = 1
-        if (randomColor == 1):
-            rgb[0] = int(color_value)
-        else: 
-            rgb[2] = int(color_value)
-    else: 
-        rgb[0] = int(color_value)
-        high_valence = True
-    
-    return high_valence
-
-
-def calcEnergy(energy, rgb):
-    high_energy = False
-    color_value = 255 * energy
-    randomColor = r.randint(0,1)
-
-    if (energy <= .25):
-        rgb[1] = int(color_value)
-    elif (energy >= .25 and energy <= .5):
-        # blue = 0
-        # green = 1
-        if (randomColor == 1):
-            rgb[1] = int(color_value)
-        else: 
-            rgb[2] = int(color_value)
-    elif (energy >= .5 and energy <= .75):
-        # green = 0
-        # red = 1
-        if (randomColor == 1):
-            rgb[0] = int(color_value)
-        else: 
-            rgb[1] = int(color_value)
-    else: 
-        rgb[0] = int(color_value)
-        high_energy = True
-    
-    return high_energy
-
-
-def calculateAvg(rgb, dance_rgb, valence_rgb, energy_rgb):
-    for i in range(0, 3):
-        rgb[i] = (dance_rgb[i] + valence_rgb[i] + energy_rgb[i]) // 3
+def calcBrightness(energy, rgb):
+    if (energy < .75):
+        adjustedEnergy = energy + 0.25
+        red = rgb[0] * adjustedEnergy
+        green = rgb[1] * adjustedEnergy
+        blue = rgb[2] * adjustedEnergy
+        rgb[0] = int(red)
+        rgb[1] = int(green)
+        rgb[2] = int(blue)
 
 
 def main():
     # rgb[0]= red 
     # rgb[1] = green
     # rgb[2] = blue
-    dance_rgb = [0, 0, 0]
-    danceability = 0.6
-    high_dance = calcDanceability(danceability, dance_rgb)
-    print(dance_rgb)
-
-    valence_rgb = [0, 0, 0]
-    valence = 0.5
-    high_valence = calcValence(valence, valence_rgb)
-    print(valence_rgb)
-    # calculate avg among dance_rgb, valence_rgb, and energy_rgb 
-
-    energy_rgb = [0, 0, 0]
-    energy = 0.2
-    high_energy = calcEnergy(energy, energy_rgb)
-    print(energy_rgb)
-
-    avg_rgb = [0, 0, 0]
-    calculateAvg(avg_rgb, dance_rgb, valence_rgb, energy_rgb)
-    print(avg_rgb)
+    rgb = [0, 0, 0]
+    danceability = .2
+    valence = .5
+    energy = .4
+    calcColor(danceability, valence, rgb)
+    print(rgb)
+    calcBrightness(energy, rgb)
+    print(rgb)
 
 if __name__ == "__main__":
     main()
